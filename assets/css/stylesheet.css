@@ -27,6 +27,13 @@
      padding:0;
      border: 1px solid darkred;
 }
+#today {
+    background-color: rebeccapurple;
+}
+h3 {
+    display: inline-block;
+
+}
  /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
