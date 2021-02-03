@@ -83,8 +83,12 @@ function getCoord( latitude, longitude ) {
   fetch(url)  
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
+    console.log(data);
+
     getWeather(data); 
     toggleFrontside(false);
+    console.log(data);
+
   })
   .catch(function() {
     // catch any errors
@@ -92,16 +96,17 @@ function getCoord( latitude, longitude ) {
 }
 // Fetch weather details from data
 function getWeather( data ) {
-  weatherInfo.temperature = d.current.temp;
-  weatherInfo.humidity = d.current.humidity;
-  weatherInfo.wind = d.current.wind_speed;
-  weatherInfo.UVIndex = d.current.uvi;
-  weatherInfo.city =  searchTextEl.val();
-  weatherInfo.ico = d.current.weather[0].icon;
-  weatherInfo.date = convertUNIXTimestamp(d.current.dt);
-  weatherInfo.description = d.current.weather[0].description;
 
-  var daily = d.daily;
+  weatherInfo.temperature = data.current.temp;
+  weatherInfo.humidity = data.current.humidity;
+  weatherInfo.wind = data.current.wind_speed;
+  weatherInfo.UVIndex = data.current.uvi;
+  weatherInfo.city =  searchTextEl.val();
+  weatherInfo.ico = data.current.weather[0].icon;
+  weatherInfo.date = convertUNIXTimestamp(data.current.dt);
+  weatherInfo.description = data.current.weather[0].description;
+
+  var daily = data.daily;
   forecast = [];
   
   for (var i=0; i<daily.length; i++) {
@@ -121,6 +126,8 @@ function getWeather( data ) {
   
   basicUI(weatherInfo);
   showForecast(forecast);
+  console.log(weatherInfo);
+
   saveInLocalStorage(weatherInfo.name);
 }
 //====== Method to show weather info ====//
@@ -133,9 +140,10 @@ function saveInLocalStorage(name) {
   
   if (saved == null) { 
     cities = [name];
+    $(".search-city").append($("<li></li>").text(name));
+
   } else {
     cities = JSON.parse(saved);
-    
     if (jQuery.inArray(name , cities) == -1) {
       cities.push(name);
       $(".search-city").append($("<li></li>").text(name));
