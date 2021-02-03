@@ -5,6 +5,7 @@ var todayHumidityEl = $('#todayHumidity');
 var todayUVEl = $('#todayUV');
 var todayWindEl = $('#todayWind');
 var searchTextEl = $('#search-text');
+var descriptionEl = $('#description');
 
 var todayEl = $('#todayDate');
 var cityTitleEl = $('#city');
@@ -20,7 +21,8 @@ var weatherInfo = {
   UVIndex: "",
   city: "",
   ico: "",
-  date: ""
+  date: "",
+  description: ""
 };
 var coord = {
   lat: "",
@@ -127,7 +129,7 @@ function basicUI(info) {
   todayUVEl.attr("style","background-color:" + uvcolor + ";");
   
   todayWindEl.text(info.wind + " MPH");
-  
+  descriptionEl.text(info.description);
   todayEl.text("("+ info.date+ ")");
   
   var todayiconurl = "http://openweathermap.org/img/wn/" + info.ico + "@2x.png";
@@ -171,6 +173,11 @@ function getAverageTemp(temp1, temp2, temp3, temp4) {
 }
 function convertUNIXTimestamp(unixTimeStamp) {
   var date =  new Date(unixTimeStamp * 1000);
+  var dd = (date.getDate() < 10 ? '0' : '') + date.getDate();
+  var MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
+  var yyyy = date.getFullYear();
+  return (MM + "/" + dd + "/" + yyyy);
+
   return ((date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear());
 }
 
@@ -194,7 +201,8 @@ function drawWeather( d ) {
   weatherInfo.city =  searchTextEl.val();
   weatherInfo.ico = d.current.weather[0].icon;
   weatherInfo.date = convertUNIXTimestamp(d.current.dt);
-  
+  weatherInfo.description = d.current.weather[0].description;
+
   var daily = d.daily;
   forecast = [];
   
@@ -208,7 +216,8 @@ function drawWeather( d ) {
     weather.UVIndex = daily[i].uvi;
     weather.ico = daily[i].weather[0].icon;
     weather.date = convertUNIXTimestamp(daily[i].dt);
-    
+    weather.description = daily[i].weather[0].description;
+
     forecast.push(weather);
   }
   

@@ -38,8 +38,7 @@
       </div>
       
       <div class="col-lg-10" hidden="true" id="frontside" >
-        <div class="row">
-        </div>
+       
         <div class="wrapper">
           <div class="row">
             <div class="col">
@@ -47,7 +46,12 @@
                 <h3> <span id="city"> </span>   <span id="todayDate">   </span> 
                   <img src="https://openweathermap.org/img/wn/01n@2x.png" alt="weather-icon" id="todayweathericon" width="50px" height="50px">
                 </h3>
+               
               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" id="description">
             </div>
           </div>
           
@@ -79,121 +83,195 @@
         <div class="container">
           <div class="row mx-n5">
             <div class="col px-3">
-              <div class="p-3 border col-forecast"> 
-                <div class="row">
-                  <div class="clearfix">
-                    <h5  class="forecast-date"> <span id="forecast-date-1"> </span>   
-                        <img src="" alt="img" id="weather-icon-1" class="icon"> 
-                    </h5>
+              <div class="p-2 border col-forecast"> 
+                <div class="row"> 
+                  <div class="col">
+                    <h5  class="forecast-date" id="forecast-date-1">  
                   </div>
                 </div>
-               
                 <div class="row">
-                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-1"> </span> </p>
+                  <div class="col text-center">
+                    <img src="" alt="img" id="weather-icon-1" class="icon"> 
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-1"> </span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Temp: </strong> <span id="forecast-temp-1"> </span> </p>
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-1"> </span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong>Humidity: </strong>  <span id="forecast-humidity-1"> </span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-1" class="uvindex">  </span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong>Wind: </strong>  <span id="forecast-wind-1"> </span> </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> UV Index: </strong> <span id="forecast-uv-1" class="uvindex">  </span> </p>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col px-3">
-              <div class="p-3 border col-forecast"> 
+              <div class="p-2 border col-forecast"> 
                 <div class="row">
-                  <div class="clearfix">
+                  <div class="col">
                     <h5  class="forecast-date"> <span id="forecast-date-2"> </span>   
-                        <img src="" alt="img" id="weather-icon-2" class="icon"> 
                     </h5>
                   </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-2"></span> </p>
+                  <div class="col">
+                    <img src="" alt="img" id="weather-icon-2" class="icon"> 
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-2"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong>  Temp: </strong><span id="forecast-temp-2"></span> </p>
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-2"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Humidity:</strong> <span id="forecast-humidity-2"></span> </p>
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-2" class="uvindex">  </span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"><strong>  Wind: </strong><span id="forecast-wind-2"></span> </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong>  UV Index: </strong><span id="forecast-uv-2" class="uvindex">  </span> </p>
+
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col px-3">
-              <div class="p-3 border col-forecast"> 
+              <div class="p-2 col-forecast"> 
                 <div class="row">
-                  <div class="clearfix">
+                  <div class="col">
                     <h5  class="forecast-date"> <span id="forecast-date-3"> </span>   
-                        <img src="" alt="img" id="weather-icon-3" class="icon"> 
                     </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <img src="" alt="img" id="weather-icon-3" class="icon"> 
                   </div>
                 </div>
                
                 <div class="row">
-                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-3"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Temp: </strong> <span id="forecast-temp-3"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-3"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Humidity: </strong> <span id="forecast-humidity-3"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-3"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Wind: </strong> <span id="forecast-wind-3"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-3" class="uvindex">  </span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong>  UV Index: </strong> <span id="forecast-uv-3" class="uvindex">  </span> </p>
+
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col px-3">
-              <div class="p-3 border col-forecast"> 
+              <div class="p-2 col-forecast"> 
                 <div class="row">
-                  <div class="clearfix">
+                  <div class="col">
                     <h5  class="forecast-date"> <span id="forecast-date-4"> </span>   
-                        <img src="" alt="img" id="weather-icon-4" class="icon"> 
                     </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <img src="" alt="img" id="weather-icon-4" class="icon"> 
+
                   </div>
                 </div>
                 
                 <div class="row">
-                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-4"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Temp: </strong> <span id="forecast-temp-4"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-4"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Humidity: </strong> <span id="forecast-humidity-4"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-4"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Wind: </strong> <span id="forecast-wind-4"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-4" class="uvindex">  </span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong>  UV Index: </strong> <span id="forecast-uv-4" class="uvindex">  </span> </p>
+
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col px-3">
-              <div class="p-3 border col-forecast"> 
+              <div class="p-2 border col-forecast"> 
                 <div class="row">
-                  <div class="clearfix">
+                  <div class="col">
                     <h5  class="forecast-date"> <span id="forecast-date-5"> </span>   
-                        <img src="" alt="img" id="weather-icon-5" class="icon"> 
                     </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <img src="" alt="img" id="weather-icon-5" class="icon"> 
+
                   </div>
                 </div>
                
                 <div class="row">
-                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-5"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Temp: </strong> <span id="forecast-temp-5"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-5"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Humidity: </strong> <span id="forecast-humidity-5"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-5"></span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong> Wind: </strong> <span id="forecast-wind-5"></span> </p>
+
+                  </div>
                 </div>
                 <div class="row">
-                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-5" class="uvindex">  </span> </p>
+                  <div class="col">
+                    <p class="weather-forecast-title"> <strong>  UV Index: </strong> <span id="forecast-uv-5" class="uvindex">  </span> </p>
+
+                  </div>
                 </div>
               </div>
             </div>

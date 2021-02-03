@@ -2,7 +2,8 @@
     margin: 20px;
     text-align: center;
     margin-left: 10px;
-    border: 1px solid #dfdfdf;
+    border: 1px solid gray;
+    border-radius: 20px;
 }
 /* Set gray background color and 100% height */
 .sidenav {
@@ -10,9 +11,18 @@
     background-color: #f8f9fa;
     background-color: #f2f2f2;
 }
-
+#description {
+    color: blue;
+    text-align: left;
+    font-family: sans-serif;
+    margin-left: 10px;
+}
+.vl {
+    border-left: 6px solid green;
+    height: 500px;
+  }
 li {
-    color: black;
+    color: gray;
     font-size: large;
     padding:0px;
     border: 1px solid lightgrey;
@@ -20,6 +30,7 @@ li {
     text-align: center;
     padding-top: 10px;
     font-family:'Segoe UI';
+    background-color: white;
     
 }
 ul { list-style-type: none;
@@ -30,7 +41,7 @@ ul { list-style-type: none;
 }
 .selected{
     border: 1px solid #888;
-    background-color: gray;
+    background-color: lightblue;
 }
 .icon {
     width: 50;
@@ -75,9 +86,10 @@ h3 {
     .row.content {height: auto;} 
 }
 header {
-    background-color: #007bfb;
+    background-color: #164d83;
+
     border-bottom: 1px gray solid;
-    padding: 30px;
+    padding: 10px;
     text-align: center;
     color: #f5f5f5;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -102,7 +114,7 @@ header {
 }
 
 .weather-forecast-title {
-    color: white;
+    color: whitesmoke;
     font-size: 15px;
     text-align: left;
     margin: 0px;
@@ -114,13 +126,18 @@ header {
 }
 .col-forecast {
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 10px;
-    color: white;
+    color: whitesmoke;
     padding-left: 10px;
     background-color: #007bfb;
-}
+    background-color: #164d83;
 
+    text-align: center;
+}
+#frontside {
+    background-color: #ffffff;
+}
 
 .container-forecast  {
     margin-left:20px;   
@@ -131,6 +148,7 @@ header {
 }
 .weather-forecast-title {
     padding-top: 10px;
+    text-align: center;
 }
 .uvindex {
     padding-right: 10px;
@@ -138,17 +156,13 @@ header {
     text-align: center;
     color: black;
 }
-.weather-title {
-    color: black;
-    vertical-align:middle;
-    margin-left: 10px;
-}
 .title {
     text-align: left;
-    padding-left: 20px;
-    color:#1f2226;
+    padding-left: 10px;
+    color: rgb(45, 37, 37);
     text-align: left;
     height: 50px;
+    font-style: italic;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
