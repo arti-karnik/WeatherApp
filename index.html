@@ -9,175 +9,213 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/stylesheet.css">
 </head>
 <body>
- 
-<header>
-      <h3> What's my Weather!</h3>
-</header>
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-lg-2 sidenav">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search city name" id="search-text">
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-danger" id="search-btn">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <span></span>
-           </button>
-        </span>
-      </div>
-    
-      <ul class="search-city">
-      </ul>
-      <br>
-    </div>
-
-    <div class="col-lg-10" hidden="true" id="frontside" >
-      <div class="row">
+  
+  <header>
+    <h3> What's my Weather!</h3>
+  </header>
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-lg-2 sidenav">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search city name" id="search-text">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-danger" id="search-btn">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <span></span>
+            </button>
+          </span>
+        </div>
         
+        <ul class="search-city">
+        </ul>
+        <br>
       </div>
-      <div class="wrapper">
-        <div class="row">
-          <div class="col">
-            <div class="clearfix title">
-              <h3> <span id="city"> Los angeles </span>   <span id="todayDate">   </span> 
-                 <img src="https://openweathermap.org/img/wn/01n@2x.png" alt="weather-icon" id="todayweathericon" width="50px" height="50px">
-              </h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <span class="weather-title">
-            <h6 > Temperature: <span id= "todayTemperature"> </span>
-            </h6>
-          </span>
-        </div>
-        <div class="row">
-          <span class="weather-title">
-            <h6 > Humidity: <span id="todayHumidity"> </span> </h6>
-          </span>
-        </div>
-        <div class="row">
-          <span class="weather-title">
-            <h6 > Wind Speed: <span id="todayWind"> </span>  </h6>
-          </span>
-        </div>
-        <div class="row">
-          <span class="weather-title">
-            <h6 > UV Index: <span  id="todayUV"> </span>  </h6>
-          </span>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row mx-n5">
-          <div class="col px-3">
-            <div class="p-4 border col-forecast"> 
-              <div class="row">
-                <h5 id="forecast-date-1"> 01/31/2021 </h5>
-              </div>
-              <div class="row">
-                <img src="" alt="img" width="30" id="weather-icon-1" height="30">
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Temp: <span id="forecast-temp-1"> 86.84 F </span> </p>
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-1"> 43% </span> </p>
-              </div>
-            </div>
-          </div>
-          <div class="col px-3">
-            <div class="p-4 border col-forecast">
-              <div class="row">
-                <h5 id="forecast-date-2"> 01/31/2021 </h5>
-              </div>
-              <div class="row">
-                <img src="" alt="img" width="30" id="weather-icon-2" height="30">
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Temp: <span id="forecast-temp-2"> 86.84 F </span> </p>
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-2"> 43% </span> </p>
-              </div>
-            </div>
-          </div>
-          <div class="col px-3">
-            <div class="p-4 border col-forecast">
-              <div class="row">
-                <h5 id="forecast-date-3"> 01/31/2021 </h5>
-              </div>
-              <div class="row">
-                <img src="" alt="img" width="30" id="weather-icon-3" height="30">
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Temp: <span id="forecast-temp-3"> 86.84 F </span> </p>
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-3"> 43% </span> </p>
-              </div>
-            </div>
-          </div>
-          <div class="col px-3">
-            <div class="p-4 border col-forecast">
-              <div class="row">
-                <h5 id="forecast-date-4"> 01/31/2021 </h5>
-              </div>
-              <div class="row">
-                <img src="" alt="img" width="30" id="weather-icon-4" height="30">
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Temp: <span id="forecast-temp-4"> 86.84 F </span> </p>
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-4"> 43% </span> </p>
-              </div>
-            </div>
-          </div>
-          <div class="col px-3">
-            <div class="p-4 border col-forecast">
-              <div class="row">
-                <h5 id="forecast-date-5"> 01/31/2021 </h5>
-              </div>
-              <div class="row">
-                <img src="" alt="img" width="30" id="weather-icon-5" height="30">
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Temp: <span id="forecast-temp-5"> 86.84 F </span> </p>
-              </div>
-              <div class="row">
-                <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-5"> 43% </span> </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       
-</div>
-
-<footer class="footer">
-  <div class="container">
-      <span class="text-muted">
-          © Copyright Arti Karnik. All Rights Reserved
-      </span>
-      <p> Designed by Arti Karnik</p>
-  </div>
-</footer>
- <!-- Latest compiled JavaScript -->
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>   
-   <script type="text/javascript" src="./assets/js/script.js"></script>
-
-</body>
-</html>
+      <div class="col-lg-10" hidden="true" id="frontside" >
+        <div class="row">
+        </div>
+        <div class="wrapper">
+          <div class="row">
+            <div class="col">
+              <div class="clearfix title">
+                <h3> <span id="city"> </span>   <span id="todayDate">   </span> 
+                  <img src="https://openweathermap.org/img/wn/01n@2x.png" alt="weather-icon" id="todayweathericon" width="50px" height="50px">
+                </h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <span class="weather-title">
+              <h6 > Temperature: <span id= "todayTemperature"> </span>
+              </h6>
+            </span>
+          </div>
+          <div class="row">
+            <span class="weather-title">
+              <h6 > Humidity: <span id="todayHumidity"> </span> </h6>
+            </span>
+          </div>
+          <div class="row">
+            <span class="weather-title">
+              <h6 > Wind Speed: <span id="todayWind"> </span>  </h6>
+            </span>
+          </div>
+          <div class="row">
+            <span class="weather-title">
+              <h6 > UV Index: <span  id="todayUV" class="uvindex"> </span>  </h6>
+            </span>
+          </div>
+        </div>
+        
+        <h4 id="forecast-title"> 5- Day Forecast: </h4>
+        
+        <div class="container">
+          <div class="row mx-n5">
+            <div class="col px-3">
+              <div class="p-3 border col-forecast"> 
+                <div class="row">
+                  <div class="clearfix">
+                    <h5  class="forecast-date"> <span id="forecast-date-1"> </span>   
+                        <img src="" alt="img" id="weather-icon-1" class="icon"> 
+                    </h5>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-1"> </span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-1"> </span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-1"> </span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-1" class="uvindex">  </span> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-3">
+              <div class="p-3 border col-forecast"> 
+                <div class="row">
+                  <div class="clearfix">
+                    <h5  class="forecast-date"> <span id="forecast-date-2"> </span>   
+                        <img src="" alt="img" id="weather-icon-2" class="icon"> 
+                    </h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-2"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-2"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-2"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-2" class="uvindex">  </span> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-3">
+              <div class="p-3 border col-forecast"> 
+                <div class="row">
+                  <div class="clearfix">
+                    <h5  class="forecast-date"> <span id="forecast-date-3"> </span>   
+                        <img src="" alt="img" id="weather-icon-3" class="icon"> 
+                    </h5>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-3"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-3"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-3"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-3" class="uvindex">  </span> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-3">
+              <div class="p-3 border col-forecast"> 
+                <div class="row">
+                  <div class="clearfix">
+                    <h5  class="forecast-date"> <span id="forecast-date-4"> </span>   
+                        <img src="" alt="img" id="weather-icon-4" class="icon"> 
+                    </h5>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-4"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-4"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-4"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-4" class="uvindex">  </span> </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-3">
+              <div class="p-3 border col-forecast"> 
+                <div class="row">
+                  <div class="clearfix">
+                    <h5  class="forecast-date"> <span id="forecast-date-5"> </span>   
+                        <img src="" alt="img" id="weather-icon-5" class="icon"> 
+                    </h5>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <p class="weather-forecast-title"> Temp: <span id="forecast-temp-5"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Humidity: <span id="forecast-humidity-5"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> Wind: <span id="forecast-wind-5"></span> </p>
+                </div>
+                <div class="row">
+                  <p class="weather-forecast-title"> UV Index: <span id="forecast-uv-5" class="uvindex">  </span> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="footer">
+        <div class="container">
+          <span class="text-muted">
+            © Copyright Arti Karnik. All Rights Reserved
+          </span>
+          <p> Designed by Arti Karnik</p>
+        </div>
+      </footer>
+      <!-- Latest compiled JavaScript -->
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>   
+      <script type="text/javascript" src="./assets/js/script.js"></script>
+      
+    </body>
+    </html>
