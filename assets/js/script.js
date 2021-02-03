@@ -9,6 +9,7 @@ var searchTextEl = $('#search-text');
 var todayEl = $('#todayDate');
 var cityTitleEl = $('#city');
 var todayWeatherIcon = $('#todayweathericon');
+var frontside = $('#frontside');
 
 var cities = [];
 
@@ -67,12 +68,16 @@ function getCoord( latitude, longitude ) {
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
     drawWeather(data); 
+    toggleFrontside(false);
     saveInLocalStorage(searchTextEl.val());
   })
   .catch(function() {
     // catch any errors
   });
 }
+function toggleFrontside(toggle) {
+  frontside.attr("hidden", toggle);
+  }
 function saveInLocalStorage(name) {
 
   let saved = localStorage.getItem("cities");
@@ -84,7 +89,7 @@ function saveInLocalStorage(name) {
     console.log(jQuery.inArray(name , cities ));
 
     if (jQuery.inArray(name , cities ) == -1) {
-      cities.push(name);
+        cities.push(name);
     }
   }  
   localStorage.setItem('cities', JSON.stringify(cities));
@@ -108,7 +113,7 @@ function basicUI(info) {
   todayHumidityEl.text(info.humidity + "%");
   todayUVEl.text(info.UVIndex);
   todayWindEl.text(info.wind);
-  todayEl.text(info.date);
+  todayEl.text("("+ info.date+ ")");
   var todayiconurl = "http://openweathermap.org/img/wn/" + info.ico + "@2x.png";
 
   todayWeatherIcon.attr("src", todayiconurl);
