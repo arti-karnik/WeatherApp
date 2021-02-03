@@ -4,7 +4,7 @@
 Application to get current and 5-day weather forecast for given city name. Searches get saved locally.
 
 <div align="left">
-      <img src="./assets/images/SS1.png">
+      <img src="./assets/images/SS.png">
 </div>
 <br>
 
