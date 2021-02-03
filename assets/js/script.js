@@ -25,12 +25,15 @@ var coord = {
   lat: "",
   lon: ""
 }
+var list = $('.search-city');
+var saveCity = false;
 var forecast = [];
+var defaultCity = "Los Angeles";
 
 //======  Page load method ====//
 $( document ).ready(function() {
   showSearchCities();
-
+  showLastSearchCity();
   //====== click on city  ====//
 
   $(".search-city").on("click","li", function(){
@@ -48,10 +51,30 @@ $( document ).ready(function() {
     let searchtext = searchTextEl.val();
     
     if (validateCityName(searchtext)) {
+      saveCity = true;
       callWeatherInfo(searchtext);
     }
   });
 });
+function showCitySelected(cityName) {
+  $('ul li').each(function(){
+    $(this).removeClass()
+    if($(this).text() == cityName){
+      $(this).addClass('selected');
+    } 
+});
+}
+
+function showLastSearchCity() {
+  var cityName = localStorage.getItem("lastSearch");
+  if (cityName == null) {
+    cityName = defaultCity;
+  } else {
+    showCitySelected(cityName);
+  }  
+  searchTextEl.val(cityName);
+  callWeatherInfo(cityName);
+}
 
 //====== Method to validate City name  ====//
 function validateCityName(name) {
@@ -84,12 +107,8 @@ function getCoord( latitude, longitude ) {
   fetch(url)  
   .then(function(resp) { return resp.json() }) // Convert data to json
   .then(function(data) {
-    console.log(data);
-
     getWeather(data); 
     toggleFrontside(false);
-    console.log(data);
-
   })
   .catch(function() {
     // catch any errors
@@ -121,18 +140,22 @@ function getWeather( data ) {
     weather.ico = daily[i].weather[0].icon;
     weather.date = convertUNIXTimestamp(daily[i].dt);
     weather.description = daily[i].weather[0].description;
-
     forecast.push(weather);
   }
   
   basicUI(weatherInfo);
   showForecast(forecast);
-
-  saveInLocalStorage(weatherInfo.name);
+  if (saveCity) {
+    saveInLocalStorage(weatherInfo.name);
+  }
 }
 //====== Method to show weather info ====//
 function toggleFrontside(toggle) {
   frontside.attr("hidden", toggle);
+}
+function saveLastSearchCity(name) {
+  localStorage.setItem('lastSearch', name);
+
 }
 //====== Method to save city name in local storage ====//
 function saveInLocalStorage(name) {
@@ -141,14 +164,17 @@ function saveInLocalStorage(name) {
   if (saved == null) { 
     cities = [name];
     $(".search-city").append($("<li></li>").text(name));
-
+    showCitySelected(name);
+    saveLastSearchCity(name);
   } else {
     cities = JSON.parse(saved);
     if (jQuery.inArray(name , cities) == -1) {
       cities.push(name);
+      saveLastSearchCity(name);
       $(".search-city").append($("<li></li>").text(name));
+      showCitySelected(name);
     }
-  }  
+  } 
   localStorage.setItem('cities', JSON.stringify(cities));
 }
 //====== Method to show city name in side bar ====//
