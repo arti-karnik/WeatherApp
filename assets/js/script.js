@@ -32,8 +32,9 @@ $( document ).ready(function() {
   showSearchCities();
 
   //====== click on city  ====//
-  $("li").click(function() {
 
+  $(".search-city").on("click","li", function(){
+  //$("li").click(function() {
     $(this).parent().find( "li" ).removeClass();
     $(this).addClass('selected');
 
@@ -126,7 +127,6 @@ function getWeather( data ) {
   
   basicUI(weatherInfo);
   showForecast(forecast);
-  console.log(weatherInfo);
 
   saveInLocalStorage(weatherInfo.name);
 }
@@ -159,7 +159,6 @@ function showSearchCities() {
     return;
   }
   saved = JSON.parse(saved);
-  $(".search-city").html('')
 
   for (var i=0; i<saved.length; i++) {
     $(".search-city").append($("<li></li>").text(saved[i]));
