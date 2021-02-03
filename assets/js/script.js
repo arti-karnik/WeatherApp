@@ -28,7 +28,7 @@ var coord = {
 var list = $('.search-city');
 var saveCity = false;
 var forecast = [];
-var defaultCity = "Los Angeles";
+var defaultCity = "Austin";
 
 //======  Page load method ====//
 $( document ).ready(function() {
@@ -163,7 +163,7 @@ function saveInLocalStorage(name) {
   
   if (saved == null) { 
     cities = [name];
-    $(".search-city").append($("<li></li>").text(name));
+    $(".search-city").prepend($("<li></li>").text(name));
     showCitySelected(name);
     saveLastSearchCity(name);
   } else {
@@ -171,7 +171,7 @@ function saveInLocalStorage(name) {
     if (jQuery.inArray(name , cities) == -1) {
       cities.push(name);
       saveLastSearchCity(name);
-      $(".search-city").append($("<li></li>").text(name));
+      $(".search-city").prepend($("<li></li>").text(name));
       showCitySelected(name);
     }
   } 
@@ -187,7 +187,7 @@ function showSearchCities() {
   saved = JSON.parse(saved);
 
   for (var i=0; i<saved.length; i++) {
-    $(".search-city").append($("<li></li>").text(saved[i]));
+    $(".search-city").prepend($("<li></li>").text(saved[i]));
   }
 }
 //====== Method to show Today's weather info ====//
