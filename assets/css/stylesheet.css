@@ -1,26 +1,30 @@
-.wrapper {
-    margin: 20px;
+
+/*====================  Common CSS ===================*/
+/*======================================================*/
+
+/*====================  Header CSS ===================*/
+header {
+    background-color: #164d83;
+
+    border-bottom: 1px gray solid;
+    padding: 10px;
     text-align: center;
-    margin-left: 10px;
-    border: 1px solid gray;
-    border-radius: 20px;
+    color: #f5f5f5;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-/* Set gray background color and 100% height */
+
+/*======================================================*/
+
+/*====================  Side bar CSS ===================*/
 .sidenav {
     height: 100vh;
     background-color: #f8f9fa;
     background-color: #f2f2f2;
 }
-#description {
-    color: blue;
-    text-align: left;
-    font-family: sans-serif;
-    margin-left: 10px;
+.input-group {
+    margin-top: 10%;
+    text-align: center;
 }
-.vl {
-    border-left: 6px solid green;
-    height: 500px;
-  }
 li {
     color: gray;
     font-size: large;
@@ -43,108 +47,23 @@ ul { list-style-type: none;
     border: 1px solid #888;
     background-color: lightblue;
 }
-.icon {
-    width: 50;
-    height: 50px;
-}
-#forecast-title {
-    color: #1f2327;
-    text-align: left;
-    padding-top: 10px;
-    
-}
-#today {
-    background-color: rebeccapurple;
-}
-h3 {
-    display: inline-block;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-}
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #212529;
-    color: white;
-    text-align: center;
-}
-.input-group {
-    margin-top: 10%;
-    text-align: center;
-}
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
-    }
-    .row.content {height: auto;} 
-}
-header {
-    background-color: #164d83;
-
-    border-bottom: 1px gray solid;
-    padding: 10px;
-    text-align: center;
-    color: #f5f5f5;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
 .button {
     width: 50px;
     height: 50px;
     background-color: blue;
 }
+/*======================================================*/
 
-.weather-title {
-    padding: 20px 20px 0px 20px;
-    color: gray;
-}
-.forecast-date {
-    margin-left: 10px;
-    margin: 0px;
-    padding: 0px;
-    padding-left: 5;
+/*====================  Front side CSS ===================*/
+.wrapper {
+    margin: 20px;
     text-align: center;
-}
-
-.weather-forecast-title {
-    color: whitesmoke;
-    font-size: 15px;
-    text-align: left;
-    margin: 0px;
-    padding: 0px;
-    margin-left: 5px;
-}
-.col-forecast-detail {
-    padding-top: 20px;
-}
-.col-forecast {
+    margin-left: 10px;
     border: 1px solid gray;
     border-radius: 20px;
-    padding: 10px;
-    color: whitesmoke;
-    padding-left: 10px;
-    background-color: #007bfb;
-    background-color: #164d83;
-
-    text-align: center;
 }
 #frontside {
     background-color: #ffffff;
-}
-
-.container-forecast  {
-    margin-left:20px;   
-    color: white;
-    margin-right: 30px;
-    border: gray 1px solid;
-    border-radius: 15px;
 }
 .weather-forecast-title {
     padding-top: 10px;
@@ -165,4 +84,84 @@ header {
     font-style: italic;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+#description {
+    color: blue;
+    text-align: left;
+    font-family: sans-serif;
+    margin-left: 10px;
+}
+.icon {
+    width: 50;
+    height: 50px;
+}
+#forecast-title {
+    color: #1f2327;
+    text-align: left;
+    padding-top: 10px;
+    
+}
+h3 {
+    display: inline-block;
+}
+.weather-title {
+    padding: 20px 20px 0px 20px;
+    color: gray;
+}
+.forecast-date {
+    margin-left: 10px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 5;
+    text-align: center;
+}
+
+.weather-forecast-title {
+    color: whitesmoke;
+    font-size: 15px;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 5px;
+}
+.col-forecast {
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 10px;
+    color: whitesmoke;
+    padding-left: 10px;
+    background-color: #164d83;
+
+    text-align: center;
+}
+/*======================================================*/
+/*======================= Footer  ======================*/
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+}
+/*======================================================*/
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height: auto;} 
+}
+
+
+
+
+
+
+
+
+
+
 
